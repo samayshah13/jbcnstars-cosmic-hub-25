@@ -37,17 +37,23 @@ const InteractiveGridWithHover = () => {
       style={{
         background: `
           radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            hsl(266 70% 65% / ${isHovering ? '0.4' : '0.08'}) 0%, 
-            hsl(266 38% 50% / ${isHovering ? '0.25' : '0.05'}) 25%, 
-            hsl(266 38% 50% / ${isHovering ? '0.15' : '0.02'}) 50%, 
-            transparent 70%),
-          linear-gradient(to right, hsl(266 60% 60% / 0.25) 1px, transparent 1px),
-          linear-gradient(to bottom, hsl(266 60% 60% / 0.25) 1px, transparent 1px)
+            hsl(266 80% 70% / ${isHovering ? '0.6' : '0.15'}) 0%, 
+            hsl(266 70% 60% / ${isHovering ? '0.4' : '0.1'}) 25%, 
+            hsl(266 60% 50% / ${isHovering ? '0.25' : '0.05'}) 50%, 
+            transparent 75%),
+          linear-gradient(to right, hsl(266 70% 65% / 0.4) 1px, transparent 1px),
+          linear-gradient(to bottom, hsl(266 70% 65% / 0.4) 1px, transparent 1px)
         `,
-        backgroundSize: '40px 40px, 40px 40px, 40px 40px',
-        animation: 'grid-move 25s linear infinite',
-        transition: 'background 0.4s ease',
-        filter: isHovering ? 'drop-shadow(0 0 30px hsl(266 70% 65% / 0.5))' : 'drop-shadow(0 0 10px hsl(266 60% 60% / 0.2))'
+        backgroundSize: '35px 35px, 35px 35px, 35px 35px',
+        animation: 'grid-move 30s linear infinite',
+        transition: 'background 0.5s ease',
+        filter: isHovering 
+          ? 'drop-shadow(0 0 40px hsl(266 80% 70% / 0.8)) drop-shadow(0 0 80px hsl(266 70% 65% / 0.4))' 
+          : 'drop-shadow(0 0 15px hsl(266 70% 65% / 0.3))',
+        boxShadow: `
+          inset 0 0 100px hsl(266 70% 65% / 0.1),
+          inset 0 0 200px hsl(266 60% 50% / 0.05)
+        `
       }}
     >
       {/* Enhanced floating glow orb that follows mouse */}
