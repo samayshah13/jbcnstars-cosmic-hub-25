@@ -81,7 +81,7 @@ const Navigation = () => {
             {/* Dropdown Menus */}
             {dropdownMenus.map(menu => <DropdownMenu key={menu.title}>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className={`nav-link flex items-center gap-1 ${isDropdownActive(menu.items) ? "active" : ""}`}>
+                  <Button variant="ghost" className={`nav-link btn-hover-fill flex items-center gap-1 ${isDropdownActive(menu.items) ? "active" : ""}`}>
                     {menu.title}
                     <ChevronDown className="w-4 h-4" />
                   </Button>
