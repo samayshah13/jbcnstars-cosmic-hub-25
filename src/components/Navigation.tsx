@@ -96,7 +96,7 @@ const Navigation = () => {
               </DropdownMenu>)}
 
             {/* Single Nav Items */}
-            {singleNavItems.map(item => <Link key={item.path} to={item.path} className={`nav-link text-center ${isActive(item.path) ? "active" : ""}`}>
+            {singleNavItems.map(item => <Link key={item.path} to={item.path} className={`nav-link btn-hover-fill text-center ${isActive(item.path) ? "active" : ""}`}>
                 {item.name}
               </Link>)}
             
