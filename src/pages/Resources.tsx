@@ -15,21 +15,21 @@ const Resources = () => {
           grade: "Grades 6-7", 
           level: "Junior",
           difficulty: "Foundation",
-          downloadUrl: "https://drive.google.com/file/d/1cibYGR7dAfWZI-USTN7FCZdEgvPsui62/view?usp=drive_link"
+          downloadUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfHFEkyMqGQvm2OGK5f5NWtgWBQwQmkm4ioRnI6q23wskImtg/viewform?usp=dialog"
         },
         {
           title: "Individual Round - Intermediate Level",
           grade: "Grades 8-10",
           level: "Intermediate", 
           difficulty: "Intermediate",
-          downloadUrl: "https://drive.google.com/file/d/1PXduYJcqfgu7pGXgBJYNm4eEcXgZMgvS/view?usp=drive_link"
+          downloadUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfqyLeCYHjWleBKEmXfUSHY_q-Cn5Lg_C2NS6d4muFFD-Wf5w/viewform?usp=header"
         },
         {
           title: "Individual Round - Senior Level",
           grade: "Grades 11-12",
           level: "Senior",
           difficulty: "Advanced", 
-          downloadUrl: "https://drive.google.com/file/d/1PqrTIeVn7BNN3Abv8rRcv0owzOJAX2aH/view?usp=drive_link"
+          downloadUrl: "https://docs.google.com/forms/d/e/1FAIpQLSd9wXQlRYaAUvBdRlKgYwV-nm2dWYnPN7p8DfqZ2hiS500YUw/viewform?usp=header"
         }
       ],
       team: [
@@ -38,21 +38,24 @@ const Resources = () => {
           grade: "Grades 6-7",
           level: "Junior",
           difficulty: "Collaborative",
-          downloadUrl: "https://drive.google.com/file/d/16_51jju8pqCsCvQeK631-AFInRrY8dZN/view?usp=drive_link"
+          questionPaper: "https://drive.google.com/file/d/15mP7qvnKBKyQHBgB8GxmCU93kDctRaXe/view?usp=drivesdk",
+          markScheme: "https://drive.google.com/file/d/1oQL1GetEENGA1v0i9JTPqNL7i8BORRlE/view?usp=drivesdk"
         },
         {
           title: "Team Round - Intermediate Level", 
           grade: "Grades 8-10",
           level: "Intermediate",
           difficulty: "Collaborative",
-          downloadUrl: "https://drive.google.com/file/d/1pX8uaOI28JTSibjpDBJOrJoInjwEyMzC/view?usp=drive_link"
+          questionPaper: "https://drive.google.com/file/d/1v51-2m9d6jau7TKZpmXydnUtx0ZdwetA/view?usp=drivesdk",
+          markScheme: "https://drive.google.com/file/d/1rGuBHQKQeOSSLEIZXwffEDqXLYwdIske/view?usp=drivesdk"
         },
         {
           title: "Team Round - Senior Level",
           grade: "Grades 11-12", 
           level: "Senior",
           difficulty: "Advanced",
-          downloadUrl: "https://drive.google.com/file/d/18IXPlMMMy_BBhpNBZNiUZLTTsAwGTl7y/view?usp=drive_link"
+          questionPaper: "https://drive.google.com/file/d/1oz_YXm9wUF8NuDSNlZLa9Ffhs9tbFmtO/view?usp=drivesdk",
+          markScheme: "https://drive.google.com/file/d/16gyQ-tV-214BVgpmYW7Lg9ovzIww44vy/view?usp=drivesdk"
         }
       ]
     },
@@ -63,21 +66,21 @@ const Resources = () => {
           grade: "Grades 6-7",
           level: "Junior", 
           difficulty: "Foundation",
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/1lOJT5HY2fMjfKw5ejH2Egk-SnxFWkQTH/view?usp=drivesdk"
         },
         {
           title: "Individual Round - Intermediate Level",
           grade: "Grades 8-10",
           level: "Intermediate",
           difficulty: "Intermediate", 
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/12thT1Uhn8sQuL7br3ZhTReJTuwT_l2lr/view?usp=drivesdk"
         },
         {
           title: "Individual Round - Senior Level",
           grade: "Grades 11-12",
           level: "Senior",
           difficulty: "Advanced",
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/1QE3qFKtn7H0PTWQcJDJUuJ4VAvkFQCnk/view?usp=drivesdk"
         }
       ],
       team: [
@@ -86,21 +89,21 @@ const Resources = () => {
           grade: "Grades 6-7",
           level: "Junior",
           difficulty: "Collaborative",
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/1u9wZJZTtW8nh8JooQCQInqBn5cxJ1QMB/view?usp=drivesdk"
         },
         {
           title: "Team Round - Intermediate Level",
           grade: "Grades 8-10", 
           level: "Intermediate",
           difficulty: "Collaborative",
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/1L65LrjO1ZZhQY1S0ZYTWhBdHufhlZ8e-/view?usp=drivesdk"
         },
         {
           title: "Team Round - Senior Level",
           grade: "Grades 11-12",
           level: "Senior",
           difficulty: "Advanced",
-          downloadUrl: "#"
+          downloadUrl: "https://drive.google.com/file/d/1OvMHfHo6-_4D-CfW_4rZGMEHtN0dFsqE/view?usp=drivesdk"
         }
       ]
     }
@@ -291,14 +294,35 @@ const Resources = () => {
                                 </div>
                               </div>
                               
-                              <Button 
-                                className="w-full group-hover:bg-primary/90 transition-colors"
-                                onClick={() => window.open(paper.downloadUrl, '_blank')}
-                                disabled={paper.downloadUrl === "#"}
-                              >
-                                <Download className="w-4 h-4 mr-2" />
-                                {paper.downloadUrl === "#" ? "Coming Soon" : "Download PDF"}
-                              </Button>
+                              {/* For 2024 team rounds with separate question paper and mark scheme */}
+                              {year === "2024" && paper.questionPaper && paper.markScheme ? (
+                                <div className="space-y-2">
+                                  <Button 
+                                    className="w-full group-hover:bg-primary/90 transition-colors"
+                                    onClick={() => window.open(paper.questionPaper, '_blank')}
+                                  >
+                                    <Download className="w-4 h-4 mr-2" />
+                                    Download Question Paper
+                                  </Button>
+                                  <Button 
+                                    variant="outline"
+                                    className="w-full"
+                                    onClick={() => window.open(paper.markScheme, '_blank')}
+                                  >
+                                    <Download className="w-4 h-4 mr-2" />
+                                    Download Mark Scheme
+                                  </Button>
+                                </div>
+                              ) : (
+                                <Button 
+                                  className="w-full group-hover:bg-primary/90 transition-colors"
+                                  onClick={() => window.open(paper.downloadUrl, '_blank')}
+                                  disabled={paper.downloadUrl === "#"}
+                                >
+                                  <Download className="w-4 h-4 mr-2" />
+                                  {paper.downloadUrl === "#" ? "Coming Soon" : "Download Paper"}
+                                </Button>
+                              )}
                             </CardContent>
                           </Card>
                         ))}
