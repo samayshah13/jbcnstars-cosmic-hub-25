@@ -37,30 +37,60 @@ const InteractiveGridWithHover = () => {
       style={{
         background: `
           radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            hsl(var(--primary) / ${isHovering ? '0.15' : '0'}) 0%, 
-            hsl(var(--primary) / ${isHovering ? '0.08' : '0'}) 20%, 
-            transparent 50%),
-          linear-gradient(to right, hsl(var(--primary) / 0.03) 1px, transparent 1px),
-          linear-gradient(to bottom, hsl(var(--primary) / 0.03) 1px, transparent 1px)
+            hsl(266 70% 65% / ${isHovering ? '0.3' : '0.05'}) 0%, 
+            hsl(266 38% 50% / ${isHovering ? '0.2' : '0.03'}) 25%, 
+            hsl(266 38% 50% / ${isHovering ? '0.1' : '0.01'}) 50%, 
+            transparent 70%),
+          linear-gradient(to right, hsl(266 38% 50% / 0.15) 1px, transparent 1px),
+          linear-gradient(to bottom, hsl(266 38% 50% / 0.15) 1px, transparent 1px)
         `,
-        backgroundSize: '50px 50px, 50px 50px, 50px 50px',
-        animation: 'grid-move 20s linear infinite',
-        transition: 'background 0.3s ease'
+        backgroundSize: '40px 40px, 40px 40px, 40px 40px',
+        animation: 'grid-move 25s linear infinite',
+        transition: 'background 0.4s ease',
+        filter: isHovering ? 'drop-shadow(0 0 20px hsl(266 70% 65% / 0.3))' : 'none'
       }}
     >
-      {/* Floating glow orb that follows mouse */}
+      {/* Enhanced floating glow orb that follows mouse */}
       {isHovering && (
         <div
-          className="absolute pointer-events-none z-10 transition-all duration-300 ease-out"
+          className="absolute pointer-events-none z-10 transition-all duration-500 ease-out"
           style={{
-            left: mousePosition.x - 100,
-            top: mousePosition.y - 100,
-            width: '200px',
-            height: '200px',
-            background: `radial-gradient(circle, hsl(var(--primary) / 0.2) 0%, hsl(var(--accent) / 0.1) 30%, transparent 70%)`,
+            left: mousePosition.x - 150,
+            top: mousePosition.y - 150,
+            width: '300px',
+            height: '300px',
+            background: `
+              radial-gradient(circle, 
+                hsl(266 70% 65% / 0.4) 0%, 
+                hsl(266 70% 65% / 0.2) 20%,
+                hsl(266 38% 50% / 0.15) 40%, 
+                hsl(266 38% 50% / 0.05) 60%,
+                transparent 80%)
+            `,
             borderRadius: '50%',
-            filter: 'blur(20px)',
-            transform: 'scale(1.2)',
+            filter: 'blur(30px)',
+            transform: 'scale(1.5)',
+            boxShadow: `
+              0 0 60px hsl(266 70% 65% / 0.4),
+              0 0 120px hsl(266 70% 65% / 0.2),
+              inset 0 0 80px hsl(266 70% 65% / 0.1)
+            `
+          }}
+        />
+      )}
+      
+      {/* Additional pulse effect at mouse position */}
+      {isHovering && (
+        <div
+          className="absolute pointer-events-none z-5 transition-all duration-300 ease-out animate-pulse"
+          style={{
+            left: mousePosition.x - 50,
+            top: mousePosition.y - 50,
+            width: '100px',
+            height: '100px',
+            background: `radial-gradient(circle, hsl(266 70% 65% / 0.6) 0%, transparent 70%)`,
+            borderRadius: '50%',
+            filter: 'blur(15px)',
           }}
         />
       )}
