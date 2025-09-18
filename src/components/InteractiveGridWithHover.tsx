@@ -37,17 +37,17 @@ const InteractiveGridWithHover = () => {
       style={{
         background: `
           radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            hsl(266 70% 65% / ${isHovering ? '0.3' : '0.05'}) 0%, 
-            hsl(266 38% 50% / ${isHovering ? '0.2' : '0.03'}) 25%, 
-            hsl(266 38% 50% / ${isHovering ? '0.1' : '0.01'}) 50%, 
+            hsl(266 70% 65% / ${isHovering ? '0.4' : '0.08'}) 0%, 
+            hsl(266 38% 50% / ${isHovering ? '0.25' : '0.05'}) 25%, 
+            hsl(266 38% 50% / ${isHovering ? '0.15' : '0.02'}) 50%, 
             transparent 70%),
-          linear-gradient(to right, hsl(266 38% 50% / 0.15) 1px, transparent 1px),
-          linear-gradient(to bottom, hsl(266 38% 50% / 0.15) 1px, transparent 1px)
+          linear-gradient(to right, hsl(266 60% 60% / 0.25) 1px, transparent 1px),
+          linear-gradient(to bottom, hsl(266 60% 60% / 0.25) 1px, transparent 1px)
         `,
         backgroundSize: '40px 40px, 40px 40px, 40px 40px',
         animation: 'grid-move 25s linear infinite',
         transition: 'background 0.4s ease',
-        filter: isHovering ? 'drop-shadow(0 0 20px hsl(266 70% 65% / 0.3))' : 'none'
+        filter: isHovering ? 'drop-shadow(0 0 30px hsl(266 70% 65% / 0.5))' : 'drop-shadow(0 0 10px hsl(266 60% 60% / 0.2))'
       }}
     >
       {/* Enhanced floating glow orb that follows mouse */}
