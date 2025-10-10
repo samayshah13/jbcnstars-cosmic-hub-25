@@ -60,17 +60,7 @@ const Index = () => {
               The top 4 teams with the highest combined scores from the first two rounds in each grade level will compete in the quiz round
             </p>
           </div>
-          <div className="relative">
-            {/* Slanted Purple Coming Soon Banner */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
-              <div className="transform -rotate-12 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-12 py-6 text-3xl font-bold shadow-2xl opacity-90">
-                COMING SOON
-              </div>
-            </div>
-            <div className="opacity-50 pointer-events-none">
-              <MiniSchedule />
-            </div>
-          </div>
+          <MiniSchedule />
         </div>
       </section>
 
