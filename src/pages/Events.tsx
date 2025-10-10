@@ -2,59 +2,94 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { Calendar, Clock, MapPin, Users, Trophy, Star, Award, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import RickRollEasterEgg from "@/components/RickRollEasterEgg";
 
 const Events = () => {
   const schedule = [
     {
-      time: "7:30 AM",
-      activity: "Reporting",
-      description: "Participants arrive and check-in begins"
+      time: "07:30 - 08:00",
+      event: "Registration",
+      group: "All",
+      venue: "Ground Floor"
     },
     {
-      time: "7:30 AM - 8:00 AM",
-      activity: "Registrations",
-      description: "Final registration and team verification"
+      time: "08:00 - 09:30",
+      event: "Team Round",
+      group: "Juniors",
+      venue: "Exam Room, 601, 602, 603"
     },
     {
-      time: "8:00 AM - 9:00 AM",
-      activity: "Round 1 - Individual Round",
-      description: "30 multiple choice questions, 60 minutes duration"
+      time: "08:00 - 09:30",
+      event: "Individual Round",
+      group: "Intermediates, Seniors",
+      venue: "Theatre Cafe, Pac 1"
     },
     {
-      time: "9:00 AM - 9:30 AM",
-      activity: "Mid Morning Snack Break",
-      description: "Refreshments and networking"
+      time: "09:30 - 09:45",
+      event: "Snack Break",
+      group: "All",
+      venue: "Juniors - 5th Floor | Inters + Seniors - 1st Floor Cafeteria"
     },
     {
-      time: "9:30 AM - 10:30 AM",
-      activity: "Round 2 - Team Round",
-      description: "10 problems to be solved in teams, 60 minutes"
+      time: "09:45 - 11:00",
+      event: "Individual Round",
+      group: "Juniors",
+      venue: "Theatre Cafe, Pac 1"
     },
     {
-      time: "10:45 AM - 11:45 AM",
-      activity: "Quiz 1 - Junior Level",
-      description: "Top 4 junior teams compete"
+      time: "09:45 - 11:00",
+      event: "Team Round",
+      group: "Intermediates, Seniors",
+      venue: "Exam Room, 601, 602, 603"
     },
     {
-      time: "11:45 AM - 12:45 PM",
-      activity: "Quiz 2 - Intermediate Level",
-      description: "Top 4 intermediate teams compete"
+      time: "11:00 - 11:15",
+      event: "Quiz Qualifying Team Announcement",
+      group: "Juniors",
+      venue: "-"
     },
     {
-      time: "12:45 PM - 1:30 PM",
-      activity: "Lunch Break and Math Games",
-      description: "Meal and recreational mathematical activities"
+      time: "11:15 - 12:15",
+      event: "Quiz Round",
+      group: "Juniors",
+      venue: "Theatre Cafe"
     },
     {
-      time: "1:30 PM - 2:30 PM",
-      activity: "Quiz 3 - Senior Level",
-      description: "Top 4 senior teams compete"
+      time: "12:00 - 12:30",
+      event: "Lunch Break",
+      group: "Inters + Seniors",
+      venue: "5th Floor"
     },
     {
-      time: "2:30 PM - 3:00 PM",
-      activity: "Prize Distribution and Closing Ceremony",
-      description: "Awards ceremony and celebration"
+      time: "12:15 - 12:45",
+      event: "Lunch Break",
+      group: "Juniors",
+      venue: "1st Floor Cafeteria"
+    },
+    {
+      time: "12:30 - 12:45",
+      event: "Quiz Qualifying Team Announcement",
+      group: "Inters + Seniors",
+      venue: "Theatre Cafe"
+    },
+    {
+      time: "13:00 - 14:00",
+      event: "Quiz Round",
+      group: "Intermediates",
+      venue: "Theatre Cafe"
+    },
+    {
+      time: "14:00 - 15:00",
+      event: "Quiz Round",
+      group: "Seniors",
+      venue: "Theatre Cafe"
+    },
+    {
+      time: "15:00 - 15:30",
+      event: "Results and Prize Distribution",
+      group: "All",
+      venue: "Theatre Cafe"
     }
   ];
 
@@ -75,65 +110,69 @@ const Events = () => {
 
           {/* Competition Day Schedule */}
           <div className="mb-16 sm:mb-20">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 sm:mb-16">Competition Day Schedule</h2>
-            <p className="text-center text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-12">October 11th, 2025, Saturday | 7:30 AM to 3:00 PM | JBCN Parel, Mumbai</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Competition Day Schedule</h2>
+            <p className="text-center text-lg sm:text-xl text-muted-foreground mb-12">October 11th, 2025, Saturday | 07:30 AM to 3:30 PM | JBCN Parel, Mumbai</p>
             
-          <div className="max-w-5xl mx-auto">
-              <div className="space-y-8">
-                {schedule.map((item, index) => (
-                  <div 
-                    key={index}
-                    className={`flex items-center gap-8 ${
-                      index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                    } animate-fade-in`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {/* Time Badge */}
-                    <div className="flex-shrink-0 w-28 text-center">
-                      <div className="bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 px-3 py-2 rounded-lg">
-                        <div className="text-primary font-bold text-sm">{item.time}</div>
-                      </div>
-                    </div>
-                    
-                    {/* Timeline Dot */}
-                    <div className="flex-shrink-0 relative">
-                      <div className="w-4 h-4 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background shadow-lg"></div>
-                      {index < schedule.length - 1 && (
-                        <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gradient-to-b from-primary via-accent to-primary opacity-30"></div>
-                      )}
-                    </div>
-
-                    {/* Content Card */}
-                    <div className="flex-1 card-glow p-6">
-                      <h3 className="text-xl font-bold mb-2 text-primary">{item.activity}</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-3">{item.description}</p>
-                      
-                      {/* Activity Type Indicator */}
-                      <div className="flex items-center gap-2">
-                        {item.activity.toLowerCase().includes('round') && (
-                          <div className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-md text-xs font-medium">
-                            Competition
-                          </div>
-                        )}
-                        {item.activity.toLowerCase().includes('break') && (
-                          <div className="px-2 py-1 bg-green-500/20 text-green-400 rounded-md text-xs font-medium">
-                            Break
-                          </div>
-                        )}
-                        {item.activity.toLowerCase().includes('ceremony') && (
-                          <div className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded-md text-xs font-medium">
-                            Event
-                          </div>
-                        )}
-                        {item.activity.toLowerCase().includes('registration') && (
-                          <div className="px-2 py-1 bg-orange-500/20 text-orange-400 rounded-md text-xs font-medium">
-                            Setup
-                          </div>
-                        )}
-                      </div>
-                    </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="glass rounded-xl overflow-hidden border border-primary/20">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="hover:bg-transparent border-primary/20">
+                      <TableHead className="text-primary font-bold text-base">Time</TableHead>
+                      <TableHead className="text-primary font-bold text-base">Event</TableHead>
+                      <TableHead className="text-primary font-bold text-base">Group</TableHead>
+                      <TableHead className="text-primary font-bold text-base">Venue</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {schedule.map((item, index) => (
+                      <TableRow 
+                        key={index}
+                        className="border-primary/10 hover:bg-primary/5 transition-colors"
+                      >
+                        <TableCell className="font-semibold text-primary whitespace-nowrap">
+                          {item.time}
+                        </TableCell>
+                        <TableCell className="font-medium">
+                          {item.event}
+                        </TableCell>
+                        <TableCell className="text-foreground-muted">
+                          {item.group}
+                        </TableCell>
+                        <TableCell className="text-foreground-muted">
+                          {item.venue}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+              
+              {/* Important Notes */}
+              <div className="mt-8 grid md:grid-cols-3 gap-4">
+                <div className="glass p-4 rounded-lg border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    <h3 className="font-semibold text-foreground">Timing</h3>
                   </div>
-                ))}
+                  <p className="text-sm text-foreground-muted">Please arrive 15 minutes before registration</p>
+                </div>
+                
+                <div className="glass p-4 rounded-lg border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <h3 className="font-semibold text-foreground">Venue</h3>
+                  </div>
+                  <p className="text-sm text-foreground-muted">JBCN International School, Parel, Mumbai</p>
+                </div>
+                
+                <div className="glass p-4 rounded-lg border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Users className="w-5 h-5 text-primary" />
+                    <h3 className="font-semibold text-foreground">Categories</h3>
+                  </div>
+                  <p className="text-sm text-foreground-muted">Junior (6-8) | Intermediate (9-10) | Senior (11-12)</p>
+                </div>
               </div>
             </div>
           </div>

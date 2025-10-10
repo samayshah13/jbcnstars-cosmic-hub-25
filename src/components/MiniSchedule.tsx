@@ -2,75 +2,86 @@ import React from "react";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const MiniSchedule = () => {
-  const events = [{
-    date: "Mar 15",
-    title: "Orientation & Registration",
-    time: "9:00 AM",
-    status: "upcoming"
-  }, {
-    date: "Mar 16",
-    title: "Preliminary Rounds",
-    time: "10:00 AM",
-    status: "upcoming"
-  }, {
-    date: "Mar 17",
-    title: "Workshop & Seminars",
-    time: "2:00 PM",
-    status: "upcoming"
-  }, {
-    date: "Mar 18",
-    title: "Finals & Award Ceremony",
-    time: "11:00 AM",
-    status: "upcoming"
-  }];
-  return <div className="space-y-4 sm:space-y-6 relative">
-      {/* Slanted Coming Soon Banner */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-        <div className="transform -rotate-12 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 text-2xl font-bold shadow-xl opacity-90">
-          COMING SOON
-        </div>
-      </div>
-      
-      <div className="opacity-50">
+  const events = [
+    {
+      time: "07:30",
+      title: "Registration",
+      group: "All Groups"
+    },
+    {
+      time: "08:00",
+      title: "Round 1 Begins",
+      group: "All Levels"
+    },
+    {
+      time: "09:45",
+      title: "Round 2 Begins",
+      group: "All Levels"
+    },
+    {
+      time: "11:15",
+      title: "Quiz Round",
+      group: "Juniors"
+    },
+    {
+      time: "13:00",
+      title: "Quiz Rounds",
+      group: "Inter & Senior"
+    },
+    {
+      time: "15:00",
+      title: "Prize Distribution",
+      group: "All Groups"
+    }
+  ];
+  return <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-2">
           <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-deep-purple" />
-          <h3 className="font-bold text-foreground text-lg sm:text-xl">Upcoming Events</h3>
+          <h3 className="font-bold text-foreground text-lg sm:text-xl">Event Schedule</h3>
         </div>
-        <Button variant="outline" className="self-start sm:self-auto text-deep-purple border-deep-purple hover:bg-deep-purple hover:text-white text-sm">
+        <Button 
+          variant="outline" 
+          className="self-start sm:self-auto text-deep-purple border-deep-purple hover:bg-deep-purple hover:text-white text-sm"
+          onClick={() => window.location.href = '/events'}
+        >
           View Full Schedule
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </div>
 
-      <div className="space-y-3 sm:space-y-4">
-        {events.map((event, index) => <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 glass rounded-lg hover:shadow-md hover:shadow-sky-purple/10 transition-all duration-300 group">
-            {/* Date */}
-            <div className="text-center min-w-[50px] sm:min-w-[60px]">
-              <div className="text-deep-purple font-semibold text-sm sm:text-base">{event.date}</div>
-              <div className="text-xs text-foreground-muted">2025</div>
+      <div className="space-y-2">
+        {events.map((event, index) => (
+          <div 
+            key={index} 
+            className="flex items-center gap-3 p-3 glass rounded-lg hover:shadow-md hover:shadow-sky-purple/10 transition-all duration-300 group border border-primary/10"
+          >
+            {/* Time */}
+            <div className="text-center min-w-[55px]">
+              <div className="text-deep-purple font-bold text-base">{event.time}</div>
             </div>
 
-            {/* Timeline connector */}
-            <div className="flex flex-col items-center">
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-deep-purple group-hover:scale-125 transition-transform duration-300" />
-              {index < events.length - 1 && <div className="w-0.5 h-6 sm:h-8 bg-sky-purple/30 mt-2" />}
-            </div>
+            {/* Divider */}
+            <div className="h-10 w-px bg-primary/20"></div>
 
             {/* Event Details */}
-            <div className="flex-1">
-              <h4 className="font-semibold text-foreground group-hover:text-deep-purple transition-colors duration-300 text-sm sm:text-base">
+            <div className="flex-1 min-w-0">
+              <h4 className="font-semibold text-foreground group-hover:text-deep-purple transition-colors duration-300 text-sm truncate">
                 {event.title}
               </h4>
-              <p className="text-xs sm:text-sm text-foreground-muted">{event.time}</p>
+              <p className="text-xs text-foreground-muted truncate">{event.group}</p>
             </div>
 
-            {/* Status Badge */}
-            <div className="px-2 sm:px-3 py-1 bg-sky-purple/20 text-deep-purple text-xs font-medium rounded-full whitespace-nowrap">
-              Upcoming
-            </div>
-          </div>)}
+            {/* Indicator */}
+            <div className="w-2 h-2 rounded-full bg-deep-purple flex-shrink-0"></div>
+          </div>
+        ))}
       </div>
+
+      <div className="text-center pt-2">
+        <p className="text-xs text-foreground-muted">
+          📅 October 11th, 2025 | 📍 JBCN Parel, Mumbai
+        </p>
       </div>
     </div>;
 };

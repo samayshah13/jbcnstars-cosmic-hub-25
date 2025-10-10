@@ -164,54 +164,117 @@ const Preparation = () => {
             </p>
           </div>
 
-          {/* AI Features Section */}
+          {/* Key Topics to Master */}
           <div className="mb-20">
             <h2 className="text-4xl font-bold text-center mb-12">
-              AI-Powered <span className="text-primary">Learning Tools</span>
+              Key Topics to <span className="text-primary">Master</span>
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              {aiFeatures.map((feature, index) => (
-                <Card 
-                  key={index}
-                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border relative overflow-hidden"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                          {feature.icon}
-                        </div>
-                        <div>
-                          <CardTitle className="text-xl">{feature.title}</CardTitle>
-                          <Badge variant="secondary" className="mt-1">
-                            {feature.status}
-                          </Badge>
-                        </div>
-                      </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <Target className="w-5 h-5" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-foreground-muted mb-6">{feature.description}</p>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Features:</h4>
-                      <ul className="space-y-1">
-                        {feature.features.map((feat, idx) => (
-                          <li key={idx} className="flex items-center space-x-2 text-sm text-foreground-muted">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    Junior Level
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-muted">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Number Theory & Arithmetic</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Basic Geometry & Shapes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Pattern Recognition</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Logical Reasoning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Word Problems</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <Zap className="w-5 h-5" />
                     </div>
-                    <Button className="w-full mt-6" disabled>
-                      <Lightbulb className="w-4 h-4 mr-2" />
-                      {feature.status}
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                    Intermediate Level
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-muted">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Algebra & Equations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Coordinate Geometry</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Trigonometry Basics</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Probability & Statistics</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Advanced Problem Solving</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <Brain className="w-5 h-5" />
+                    </div>
+                    Senior Level
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-foreground-muted">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Calculus Fundamentals</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Complex Numbers</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Mathematical Analysis</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Olympiad-Level Problems</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Abstract Reasoning</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
