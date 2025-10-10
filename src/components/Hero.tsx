@@ -5,6 +5,7 @@ import { useTheme } from "@/providers/ThemeProvider";
 import CountdownTimer from "@/components/CountdownTimer";
 import heroBrain from "@/assets/hero-brain.jpg";
 import { useNavigate } from "react-router-dom";
+import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
 const Hero = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const Hero = () => {
                 <Brain className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-pulse" />
                 Explore Events
               </Button>
-              <Button variant="secondary" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc4E24X8duHNVdaE7vyYHLVRx2p7aZ13Dxy8lmRPhGMOe43wA/viewform?usp=dialog&urp=gmail_link', '_blank')} className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 btn-hover-fill">Join the Competition!</Button>
+              <RegistrationClosedEasterEgg variant="default" className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 btn-hover-fill" />
             </div>
 
             {/* Competition Countdown */}

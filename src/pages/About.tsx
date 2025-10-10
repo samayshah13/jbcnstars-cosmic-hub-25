@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { Calculator, Users, Trophy, Lightbulb, BookOpen, Brain, Puzzle, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/ThemeProvider";
+import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
 const About = () => {
   const {
     theme
@@ -186,9 +187,7 @@ const About = () => {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Join JBCNSTARS and embark on a journey of mathematical discovery, collaboration, and excellence.
             </p>
-            <Button size="lg" className="text-lg px-8 py-4">
-              Register Now
-            </Button>
+            <RegistrationClosedEasterEgg size="lg" className="text-lg px-8 py-4" />
           </div>
         </div>
       </div>

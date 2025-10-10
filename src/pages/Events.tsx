@@ -4,6 +4,7 @@ import { Calendar, Clock, MapPin, Users, Trophy, Star, Award, Zap } from "lucide
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import RickRollEasterEgg from "@/components/RickRollEasterEgg";
+import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
 
 const Events = () => {
   const schedule = [
@@ -188,13 +189,10 @@ const Events = () => {
                 and embark on an extraordinary mathematical journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button 
+                <RegistrationClosedEasterEgg 
                   variant="default"
-                  className="px-8 py-4 text-lg font-semibold" 
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc4E24X8duHNVdaE7vyYHLVRx2p7aZ13Dxy8lmRPhGMOe43wA/viewform?usp=dialog&urp=gmail_link', '_blank')}
-                >
-                  Register Now
-                </Button>
+                  className="px-8 py-4 text-lg font-semibold"
+                />
                 <RickRollEasterEgg 
                   liveStreamUrl="https://youtube.com/live/vQbFbA2VoLA?feature=share"
                   className="px-8 py-4 text-lg font-semibold"

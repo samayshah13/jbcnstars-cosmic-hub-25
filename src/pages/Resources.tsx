@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
 
 const Resources = () => {
   const pastPapers = {
@@ -174,13 +175,9 @@ const Resources = () => {
                   Ready to showcase your mathematical prowess? Register now for the most prestigious 
                   mathematics competition for grades 6-12.
                 </p>
-                <Button 
-                  className="px-8 py-4 text-lg font-semibold" 
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc4E24X8duHNVdaE7vyYHLVRx2p7aZ13Dxy8lmRPhGMOe43wA/viewform?usp=dialog&urp=gmail_link', '_blank')}
-                >
-                  <ExternalLink className="w-5 h-5 mr-2" />
-                  Register Now
-                </Button>
+                <RegistrationClosedEasterEgg 
+                  className="px-8 py-4 text-lg font-semibold"
+                />
               </CardContent>
             </Card>
           </div>
