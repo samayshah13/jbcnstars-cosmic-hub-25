@@ -136,10 +136,6 @@ const Rules = () => {
                         <h4 className="font-semibold text-sm mb-2">Topics Covered:</h4>
                         <p className="text-foreground-muted text-sm">{grade.topics}</p>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">Difficulty:</h4>
-                        <p className="text-foreground-muted text-sm">{"Grade-appropriate logical reasoning and problem-solving"}</p>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>

@@ -35,6 +35,16 @@ const Events = () => {
             </div>
           </div>
 
+          <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-16">
+            {rounds.map((round) => (
+              <div key={round.title} className="glass p-5 rounded-lg border border-primary/20">
+                <h3 className="font-semibold mb-3">{round.title}</h3>
+                <p className="text-foreground-muted text-sm mb-2">{round.subJunior}</p>
+                <p className="text-foreground-muted text-sm">{round.otherLevels}</p>
+              </div>
+            ))}
+          </div>
+
           {/* Registration CTA */}
           <div className="mt-24 text-center">
             <div className="card-premium max-w-3xl mx-auto p-12">
