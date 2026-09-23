@@ -11,8 +11,8 @@ const InstagramEasterEgg: React.FC<InstagramEasterEggProps> = ({ className }) =>
   const [showHeart, setShowHeart] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [isHolding, setIsHolding] = useState(false);
-  const holdTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const heartTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const holdTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleDoubleClick = () => {
     setShowHeart(true);
