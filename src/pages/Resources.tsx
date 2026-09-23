@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
+import { officialSyllabusUrl } from "@/lib/competition"
 
 const Resources = () => {
   const pastPapers = {
@@ -170,16 +171,22 @@ const Resources = () => {
           <div className="mb-20">
             <Card className="max-w-3xl mx-auto bg-primary/5 border-primary/20">
               <CardContent className="p-8 text-center">
-                <h2 className="text-3xl font-bold mb-4">Register for JBCN STARS 2025</h2>
+                <h2 className="text-3xl font-bold mb-4">Register for JBCN STARS 2026</h2>
                 <p className="text-foreground-muted mb-6">
                   Ready to showcase your mathematical prowess? Register now for the most prestigious 
-                  mathematics competition for grades 6-12.
+                  mathematics competition for Grades 1–12. Teams of three; register by October 5, 2026. Fee: INR 1500 per team, including breakfast and lunch.
                 </p>
                 <RegistrationClosedEasterEgg 
                   className="px-8 py-4 text-lg font-semibold"
                 />
               </CardContent>
             </Card>
+          </div>
+
+          <div className="mb-16 text-center">
+            <h2 className="text-2xl font-bold mb-3">2026 Syllabus & Rounds</h2>
+            <p className="text-foreground-muted mb-4">View the official syllabus and round details for all five levels, including Sub Junior Levels 1 and 2.</p>
+            <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official Syllabus & Rounds <ExternalLink className="w-4 h-4 ml-2" /></Button>
           </div>
 
           {/* Past Papers Section */}
@@ -368,7 +375,7 @@ const Resources = () => {
                 <Star className="w-12 h-12 text-primary mx-auto" />
                 <h3 className="text-2xl font-bold">Ready to Start Practicing?</h3>
                 <p className="text-foreground-muted max-w-md">
-                  Download past papers and begin your preparation journey for JBCN Stars 2025
+                  Download past papers and begin your preparation journey for JBCN Stars 2026
                 </p>
                 <Button size="lg" className="mt-4">
                   <Download className="w-5 h-5 mr-2" />

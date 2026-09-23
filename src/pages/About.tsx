@@ -71,7 +71,7 @@ const About = () => {
                 Scholastic Tournament for Advanced Mathematics Reasoning Skills
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                JBCNSTARS is more than just a mathematics competition—it's a celebration of intellectual curiosity, 
+                The 4th edition of JBCNSTARS welcomes teams of three from Grades 1–12. It is more than just a mathematics competition—it's a celebration of intellectual curiosity, 
                 analytical thinking, and the boundless potential of young minds to solve complex problems.
               </p>
             </div>
