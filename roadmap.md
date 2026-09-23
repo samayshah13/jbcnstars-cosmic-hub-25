@@ -1,5 +1,5 @@
-- [ ] Update 2026 event date, time, fee, deadline and registration form throughout the website.
-- [ ] Add Grades 1–12 categories including both primary levels.
-- [ ] Extract the revised syllabus and round details accurately into the website, without linking the source document (source PDF now uploaded).
-- [ ] Remove or distinguish obsolete 2025 schedule and registration messaging.
-- [ ] Verify updated pages and links in the preview.
+- [x] Update 2026 event date, time, fee, deadline and registration form throughout the website.
+- [x] Add Grades 1–12 categories including both primary levels.
+- [x] Extract the revised syllabus and round details accurately into the website, without linking the source document (source PDF now uploaded).
+- [x] Remove or distinguish obsolete 2025 schedule and registration messaging.
+- [x] Verify updated pages and links in the preview.
