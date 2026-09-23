@@ -4,6 +4,7 @@ import { CheckCircle, AlertCircle, Clock, Users, BookOpen, Trophy } from "lucide
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { registrationUrl } from "@/lib/competition"
+import { syllabus, rounds } from "@/lib/syllabus"
 
 const Rules = () => {
   const generalRules = [
@@ -22,21 +23,21 @@ const Rules = () => {
     {
       title: "Individual Round",
       description: "Each participant solves grade-appropriate questions",
-      duration: "See official 2026 round details",
-      questions: "See the official 2026 syllabus for question and scoring details",
+      duration: "Sub Junior 1: 30 min · other levels: 60 min",
+      questions: "Sub Junior 1: +4 correct, no penalty. Other levels: 30 multiple-choice questions, +4 correct, −1 incorrect.",
       icon: <BookOpen className="w-6 h-6" />
     },
     {
       title: "Team Round", 
       description: "Teams of three collaborate to solve problems",
-      duration: "See official 2026 round details",
-      questions: "See the official 2026 syllabus for question and scoring details",
+      duration: "Sub Junior 1: 30 min · other levels: 60 min",
+      questions: "Sub Junior 1: collaborative challenges, +10 correct. Other levels: 10 problems, +10 correct, no penalty.",
       icon: <Users className="w-6 h-6" />
     },
     {
       title: "Math Quiz",
-      description: "Qualifying teams compete in the quiz round",
-      duration: "See official 2026 round details",
+      description: "The top 4 teams in each level qualify based on combined individual and team scores",
+      duration: "Five levels",
       questions: "Math Star trophy for winners",
       icon: <Trophy className="w-6 h-6" />
     }
@@ -46,13 +47,13 @@ const Rules = () => {
     {
       level: "Sub Junior Level 1",
       grades: "Grades 1 & 2",
-      topics: "See the official 2026 syllabus for this level.",
+      topics: "Number sense, counting and place value, basic addition and subtraction, number and shape patterns, measurement, money, time, and logical thinking puzzles.",
       difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
     },
     {
       level: "Sub Junior Level 2",
       grades: "Grades 3, 4 & 5",
-      topics: "See the official 2026 syllabus for this level.",
+      topics: "Logical thinking, number and figure patterns, whole-number operations, fractions and decimals, number properties, time problems, basic geometry, measurement, and data handling.",
       difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
     },
     {
@@ -179,7 +180,7 @@ const Rules = () => {
           </div>
 
            <div className="text-center mb-16">
-             <p className="text-foreground-muted mb-4">The official 2026 document has the complete syllabus and round details for every level.</p>
+             <p className="text-foreground-muted mb-4">The individual and team rounds lead to a Math Quiz for the top 4 teams in each level.</p>
 
            </div>
 
@@ -258,7 +259,7 @@ const Rules = () => {
                         Scoring is based on accuracy, with different weightage for different rounds.
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-foreground-muted">
-                        <li>See the official 2026 syllabus and round details for scoring and quiz qualification.</li>
+                        <li>Sub Junior Level 1: individual +4 correct with no penalty; team +10 correct. Other levels: individual +4 correct, −1 incorrect; team +10 correct with no penalty. The top 4 teams per level qualify for the quiz based on combined scores.</li>
                         <li>Awards: Top three individual scorers at each level receive plaques; top three teams at each level receive plaques and certificates for each member; quiz winners receive the Math Star trophy. Every participant receives a participation certificate.</li>
                       </ul>
                     </AccordionContent>
