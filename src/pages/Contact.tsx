@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import { syllabus, rounds } from '@/lib/syllabus';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -96,7 +97,7 @@ const Contact = () => {
     },
     {
       question: "What is the competition format?",
-      answer: "Teams compete in teams of three. The updated 2026 round format will be posted here soon."
+      answer: rounds.map((round) => `${round.title}: ${round.subJunior} ${round.otherLevels}`).join("\n\n")
     },
     {
       question: "What prizes and recognition do winners receive?",
@@ -104,13 +105,7 @@ const Contact = () => {
     },
     {
       question: "What mathematical topics are covered?",
-      answer: `Sub Junior Level 1 (Grades 1–2) and Sub Junior Level 2 (Grades 3–5) have been added for 2026. The updated syllabus for both new levels will be posted here soon.\n\nJunior Level (Grades 6-7): Logical thinking, number patterns, figure patterns, number properties, speed/distance/time, ratios, percentages, and basic geometry.
-
-Intermediate Level (Grades 8-10): Logic problems, arithmetic, number theory, patterns, algebra, geometry, trigonometry, statistics, and probability.
-
-Senior Level (Grades 11-12): Advanced arithmetic, number theory, algebraic concepts, geometric reasoning, trigonometry, statistics, and probability applications.
-
-All questions encourage logical thinking and creative problem-solving using grade-appropriate mathematical concepts.`
+      answer: syllabus.map((item) => `${item.level} (${item.grades}): ${item.topics}`).join("\n\n")
     },
     {
       question: "When and where does the competition take place?",

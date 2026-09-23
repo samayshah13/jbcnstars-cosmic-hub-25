@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import { Clock, MapPin, Users } from "lucide-react";
+import { rounds } from "@/lib/syllabus";
 import RickRollEasterEgg from "@/components/RickRollEasterEgg";
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
 
@@ -29,7 +30,7 @@ const Events = () => {
               <div className="glass p-5 rounded-lg border border-primary/20"><Users className="w-5 h-5 text-primary mb-2" /><h3 className="font-semibold">Levels</h3><p className="text-foreground-muted">Sub Junior 1 (Grades 1–2), Sub Junior 2 (Grades 3–5), Junior (6–7), Intermediate (8–10), Senior (11–12)</p></div>
             </div>
             <div className="text-center mt-8">
-              <p className="text-foreground-muted mb-4">For the 2026 syllabus and competition round details, view the official document.</p>
+              <p className="text-foreground-muted mb-4">The top 4 teams in each level qualify for the Math Quiz based on combined individual and team scores.</p>
 
             </div>
           </div>
