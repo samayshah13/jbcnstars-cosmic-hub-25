@@ -48,11 +48,11 @@ const Hero = () => {
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base md:text-lg text-foreground-muted max-w-2xl mx-auto leading-relaxed px-4">
-              The 3rd edition of our Mathematics Competition: Scholastic Tournament for Advanced Mathematics and Reasoning Skills.
+              The 4th edition of our Mathematics Competition: Scholastic Tournament for Advanced Mathematics and Reasoning Skills.
               <br />
-              <span className="font-semibold text-primary text-xs sm:text-sm md:text-base">October 11th, 2025, Saturday | 7:30 AM - 3:00 PM | JBCN Parel</span>
+              <span className="font-semibold text-primary text-xs sm:text-sm md:text-base">Monday, October 19, 2026 | 7:30 AM - 4:00 PM | JBCN Parel</span>
               <br />
-              <span className="text-xs sm:text-sm">Registration fee: INR 1200 per team (includes breakfast & lunch) | Deadline: October 5, 2025</span>
+              <span className="text-xs sm:text-sm">Registration fee: INR 1500 per team (includes breakfast & lunch) | Deadline: October 5, 2026</span>
             </p>
 
             {/* Call to Action Buttons */}

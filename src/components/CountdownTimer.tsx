@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Clock } from "lucide-react";
+import { competitionStart } from "@/lib/competition";
 interface TimeLeft {
   days: number;
   hours: number;
@@ -14,8 +15,7 @@ const CountdownTimer = () => {
     seconds: 0
   });
   useEffect(() => {
-    // Set target date to October 11, 2025 (JBCN Stars competition date)
-    const targetDate = new Date("2025-10-11T08:00:00").getTime();
+    const targetDate = competitionStart.getTime();
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;

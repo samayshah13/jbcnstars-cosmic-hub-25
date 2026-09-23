@@ -3,42 +3,14 @@ import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const MiniSchedule = () => {
   const events = [
-    {
-      time: "07:30",
-      title: "Registration",
-      group: "All Groups"
-    },
-    {
-      time: "08:00",
-      title: "Round 1 Begins",
-      group: "All Levels"
-    },
-    {
-      time: "09:45",
-      title: "Round 2 Begins",
-      group: "All Levels"
-    },
-    {
-      time: "11:15",
-      title: "Quiz Round",
-      group: "Juniors"
-    },
-    {
-      time: "13:00",
-      title: "Quiz Rounds",
-      group: "Inter & Senior"
-    },
-    {
-      time: "15:00",
-      title: "Prize Distribution",
-      group: "All Groups"
-    }
+    { time: "07:30", title: "Event begins", group: "All levels" },
+    { time: "16:00", title: "Event concludes", group: "All levels" }
   ];
   return <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-2">
           <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-deep-purple" />
-          <h3 className="font-bold text-foreground text-lg sm:text-xl">Event Schedule</h3>
+          <h3 className="font-bold text-foreground text-lg sm:text-xl">2026 Event Day</h3>
         </div>
         <Button 
           variant="outline" 
@@ -80,7 +52,7 @@ const MiniSchedule = () => {
 
       <div className="text-center pt-2">
         <p className="text-xs text-foreground-muted">
-          📅 October 11th, 2025 | 📍 JBCN Parel, Mumbai
+          October 19, 2026 · JBCN Parel · Detailed round times to be announced
         </p>
       </div>
     </div>;

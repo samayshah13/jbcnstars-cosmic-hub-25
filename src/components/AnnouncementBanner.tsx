@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { X, ExternalLink, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { registrationUrl, isRegistrationOpen } from "@/lib/competition";
 
 const AnnouncementBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,9 +20,9 @@ const AnnouncementBanner = () => {
     setIsVisible(false);
     localStorage.setItem('announcement-banner-dismissed', 'true');
   };
-  const registrationUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc4E24X8duHNVdaE7vyYHLVRx2p7aZ13Dxy8lmRPhGMOe43wA/viewform?usp=header";
+  const registrationOpen = isRegistrationOpen();
 
-  if (!isVisible) return null;
+  if (!isVisible || !registrationOpen) return null;
 
   const handleRegisterClick = () => {
     setIsFormOpen(true);
@@ -38,7 +39,7 @@ const AnnouncementBanner = () => {
           <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <span className="font-semibold text-xs sm:text-sm md:text-base truncate">
-              🎉 JBCNSTARS 2025 Registration Open! | Oct 11, 2025
+              🎉 JBCNSTARS 2026 Registration Open! | Oct 19, 2026
               <span className="hidden sm:inline"> | JBCN Parel</span>
             </span>
           </div>
@@ -53,12 +54,13 @@ const AnnouncementBanner = () => {
               <span className="hidden sm:inline">Register Now</span>
               <span className="sm:hidden">Register</span>
             </Button>
-            <button 
+            <Button 
+              variant="ghost" size="icon" aria-label="Dismiss announcement"
               onClick={handleDismiss}
               className="text-primary-foreground hover:text-primary-foreground/80 transition-colors p-1"
             >
               <X className="w-3 h-3 sm:w-4 sm:h-4" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -67,7 +69,7 @@ const AnnouncementBanner = () => {
         <DialogContent className="max-w-5xl h-[90vh] sm:h-[90vh] p-0 m-2 sm:m-0 w-[calc(100vw-1rem)] sm:w-auto">
           <DialogHeader className="p-3 sm:p-6 pb-0">
             <DialogTitle className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-              <span className="text-base sm:text-lg">JBCNSTARS 2025 Registration</span>
+              <span className="text-base sm:text-lg">JBCNSTARS 2026 Registration</span>
               <Button 
                 variant="outline" 
                 size="sm" 

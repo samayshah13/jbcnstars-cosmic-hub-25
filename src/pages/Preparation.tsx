@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { officialSyllabusUrl } from "@/lib/competition"
 
 const Preparation = () => {
   const [selectedLevel, setSelectedLevel] = useState("junior")
@@ -37,6 +38,8 @@ const Preparation = () => {
   ]
 
   const preparationTips = {
+    subJunior1: [{ category: "Grades 1–2", tips: ["Review the official Sub Junior Level 1 syllabus", "Practice age-appropriate number sense and reasoning"] }],
+    subJunior2: [{ category: "Grades 3–5", tips: ["Review the official Sub Junior Level 2 syllabus", "Practice grade-appropriate problem solving and reasoning"] }],
     junior: [
       {
         category: "Foundation Building",
@@ -159,19 +162,32 @@ const Preparation = () => {
               Preparation <span className="text-primary">Hub</span>
             </h1>
             <p className="text-lg sm:text-xl text-foreground-muted max-w-3xl mx-auto px-4">
-              Your complete guide to excel in JBCN Stars. From AI-powered study tools 
+              Your complete guide to excel in JBCN Stars. From official syllabus details 
               to strategic preparation tips - everything you need to succeed.
             </p>
           </div>
 
-          {/* Key Topics to Master */}
+           <div className="text-center mb-12">
+             <p className="text-foreground-muted mb-4">For exact 2026 topics and round details at all five levels, consult the official document.</p>
+             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official 2026 Syllabus & Rounds</Button>
+           </div>
+
+           {/* Key Topics to Master */}
           <div className="mb-20">
             <h2 className="text-4xl font-bold text-center mb-12">
               Key Topics to <span className="text-primary">Master</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
+               <Card className="bg-card border-card-border">
+                 <CardHeader><CardTitle>Sub Junior Level 1 · Grades 1–2</CardTitle></CardHeader>
+                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
+               </Card>
+               <Card className="bg-card border-card-border">
+                 <CardHeader><CardTitle>Sub Junior Level 2 · Grades 3–5</CardTitle></CardHeader>
+                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
+               </Card>
+               <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -285,9 +301,11 @@ const Preparation = () => {
             </h2>
             
             <Tabs value={selectedLevel} onValueChange={setSelectedLevel} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8">
-                <TabsTrigger value="junior">Junior (6-8)</TabsTrigger>
-                <TabsTrigger value="intermediate">Intermediate (9-10)</TabsTrigger>
+              <TabsList className="flex w-full overflow-x-auto justify-start mb-8 h-auto">
+                 <TabsTrigger value="subJunior1">Sub Junior 1 (1–2)</TabsTrigger>
+                 <TabsTrigger value="subJunior2">Sub Junior 2 (3–5)</TabsTrigger>
+                <TabsTrigger value="junior">Junior (6–7)</TabsTrigger>
+                <TabsTrigger value="intermediate">Intermediate (8–10)</TabsTrigger>
                 <TabsTrigger value="senior">Senior (11-12)</TabsTrigger>
               </TabsList>
               
@@ -365,7 +383,15 @@ const Preparation = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
+               <Card className="bg-card border-card-border">
+                 <CardHeader><CardTitle>Sub Junior Level 1 · Grades 1–2</CardTitle></CardHeader>
+                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
+               </Card>
+               <Card className="bg-card border-card-border">
+                 <CardHeader><CardTitle>Sub Junior Level 2 · Grades 3–5</CardTitle></CardHeader>
+                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
+               </Card>
+               <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
                 <CardContent className="p-6 text-center">
                   <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="font-bold mb-2">Past Papers</h3>

@@ -6,18 +6,18 @@ import { ChevronLeft, ChevronRight, CalendarDays, Clock, MapPin } from "lucide-r
 import { format } from "date-fns";
 import { toast } from "sonner";
 const SaveTheDateCalendar = () => {
-  const competitionDate = new Date(2025, 9, 11); // October 11, 2025 (month is 0-indexed)
+  const competitionDate = new Date(2026, 9, 19);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(competitionDate);
   const handleSaveTheDate = () => {
     // Create calendar event
     const eventTitle = "JBCN STARS - Mathematics Competition";
-    const eventStart = "2025-10-11T08:00:00";
-    const eventEnd = "2025-10-11T15:00:00";
-    const eventDescription = "JBCN STARS (Scholastic Tournament for Advanced Mathematics and Reasoning Skills) - Team competition for grades 6-12";
+    const eventStart = "20261019T073000";
+    const eventEnd = "20261019T160000";
+    const eventDescription = "JBCN STARS 2026 - Teams of three, Grades 1–12";
     const eventLocation = "JBCN Parel, Mumbai";
 
     // Create Google Calendar URL
-    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart.replace(/[-:]/g, '').replace('T', 'T')}Z/${eventEnd.replace(/[-:]/g, '').replace('T', 'T')}Z&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}`;
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&ctz=Asia%2FKolkata&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}`;
 
     // Open Google Calendar
     window.open(googleCalendarUrl, '_blank');
@@ -31,7 +31,7 @@ const SaveTheDateCalendar = () => {
             Important
           </Badge>
           <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-2">Save The Date</h2>
-          <p className="text-sm sm:text-base text-muted-foreground">Mark your calendar for JBCN STARS 2025!</p>
+          <p className="text-sm sm:text-base text-muted-foreground">Mark your calendar for JBCN STARS 2026!</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
@@ -47,14 +47,14 @@ const SaveTheDateCalendar = () => {
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                 <div>
-                  <h4 className="text-base sm:text-lg lg:text-xl font-bold text-primary">October 11, 2025</h4>
-                  <p className="text-sm sm:text-base text-muted-foreground">Saturday</p>
+                  <h4 className="text-base sm:text-lg lg:text-xl font-bold text-primary">October 19, 2026</h4>
+                  <p className="text-sm sm:text-base text-muted-foreground">Monday</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3 text-muted-foreground text-sm sm:text-base">
                 <Clock className="w-4 h-4" />
-                <span>7:30 AM - 3:00 PM</span>
+                <span>7:30 AM - 4:00 PM</span>
               </div>
               
               <div className="flex items-center space-x-3 text-muted-foreground text-sm sm:text-base">
@@ -68,7 +68,7 @@ const SaveTheDateCalendar = () => {
               <h4 className="font-semibold text-sm sm:text-base">About the Competition</h4>
               <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                 Join us for an exhilarating display of mathematical prowess and problem-solving skills. 
-                JBCN STARS is a team competition open to students from grades 6-12, featuring three exciting rounds: 
+                JBCN STARS is a team competition open to students from Grades 1–12, featuring three exciting rounds: 
                 Individual Round, Team Round, and Math Quiz.
               </p>
             </div>
@@ -84,7 +84,7 @@ const SaveTheDateCalendar = () => {
           <div className="flex justify-center overflow-hidden">
             <div className="bg-background/50 border border-border rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-inner w-full max-w-sm overflow-hidden">
               <div className="text-center mb-3 sm:mb-4">
-                <h4 className="font-semibold text-base sm:text-lg">October 2025</h4>
+                <h4 className="font-semibold text-base sm:text-lg">October 2026</h4>
               </div>
               
               <div className="overflow-hidden">

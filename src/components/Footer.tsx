@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-foreground-muted px-0">Copyright ©2025 JBCNSTARS</p>
+            <p className="text-sm text-foreground-muted px-0">Copyright ©2026 JBCNSTARS</p>
             <div className="flex items-center space-x-4">
               <span className="text-xs text-foreground-muted">Developed by:</span>
               <Link to="/team" className="text-xs text-primary hover:underline">

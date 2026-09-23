@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import { officialSyllabusUrl } from "@/lib/competition";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -92,11 +93,11 @@ const Contact = () => {
   const faqs = [
     {
       question: "Who can participate in JBCN Stars?",
-      answer: "JBCNSTARS welcomes students from grades 6-12 from all schools. Teams of three students compete together in this exciting mathematical challenge."
+      answer: "JBCNSTARS 2026 welcomes students from Grades 1–12 from different schools. Teams of three students compete together in this exciting mathematical challenge."
     },
     {
       question: "What is the competition format?",
-      answer: "Three rounds test different skills: Individual Round (30 questions, 60 minutes), Team Round (10 collaborative problems, 60 minutes), and Quiz Round for the top 4 teams from each grade level."
+      answer: `Teams take part in individual, team, and quiz rounds. For the 2026 round details, see the official syllabus: ${officialSyllabusUrl}`
     },
     {
       question: "What prizes and recognition do winners receive?",
@@ -104,7 +105,7 @@ const Contact = () => {
     },
     {
       question: "What mathematical topics are covered?",
-      answer: `Junior Level (Grades 6-7): Logical thinking, number patterns, figure patterns, number properties, speed/distance/time, ratios, percentages, and basic geometry.
+      answer: `Sub Junior Level 1 (Grades 1–2) and Sub Junior Level 2 (Grades 3–5) have been added for 2026. For the exact syllabus at each level, see the official document: ${officialSyllabusUrl}\n\nJunior Level (Grades 6-7): Logical thinking, number patterns, figure patterns, number properties, speed/distance/time, ratios, percentages, and basic geometry.
 
 Intermediate Level (Grades 8-10): Logic problems, arithmetic, number theory, patterns, algebra, geometry, trigonometry, statistics, and probability.
 
@@ -114,7 +115,7 @@ All questions encourage logical thinking and creative problem-solving using grad
     },
     {
       question: "When and where does the competition take place?",
-      answer: "Saturday, October 11th, 2025 from 8:00 AM to 3:00 PM at JBCN International School Parel, Mumbai. Join us for an exciting day of mathematical exploration and friendly competition."
+      answer: "Monday, October 19th, 2026 from 7:30 AM to 4:00 PM at JBCN International School Parel, Mumbai. Join us for an exciting day of mathematical exploration and friendly competition."
     },
     {
       question: "How can students prepare effectively?",
@@ -122,7 +123,7 @@ All questions encourage logical thinking and creative problem-solving using grad
     },
     {
       question: "Is there a registration fee?",
-      answer: "Registration details including fees are available in the registration form. The fee covers all competition materials, refreshments during the event, and certificates."
+      answer: "Registration is INR 1500 per team of three, including breakfast and lunch. Register by October 5, 2026."
     },
     {
       question: "What tools are allowed during the competition?",

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { AlertTriangle, Clock, XCircle, Calendar } from "lucide-react";
+import { Clock, XCircle, Calendar } from "lucide-react";
+import { registrationUrl, isRegistrationOpen } from "@/lib/competition";
 
 interface RegistrationClosedEasterEggProps {
   variant?: "default" | "outline" | "ghost";
@@ -15,6 +16,7 @@ const RegistrationClosedEasterEgg = ({
   size = "default" 
 }: RegistrationClosedEasterEggProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const registrationOpen = isRegistrationOpen();
 
   const sadMessages = [
     "The early bird gets the worm... and you weren't early! 🐛",
@@ -31,7 +33,7 @@ const RegistrationClosedEasterEgg = ({
         variant={variant}
         className={className}
         size={size}
-        onClick={() => setIsOpen(true)}
+        onClick={() => registrationOpen ? window.open(registrationUrl, "_blank", "noopener,noreferrer") : setIsOpen(true)}
       >
         Register Now
       </Button>
@@ -59,7 +61,7 @@ const RegistrationClosedEasterEgg = ({
                 </p>
                 <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                   <Calendar className="w-4 h-4" />
-                  <span>Registration Deadline: October 5th, 2025</span>
+                  <span>Registration Deadline: October 5th, 2026</span>
                 </div>
               </div>
 
@@ -68,7 +70,7 @@ const RegistrationClosedEasterEgg = ({
                   But don't worry! 💫
                 </p>
                 <p className="text-xs text-foreground-muted leading-relaxed">
-                  Stay tuned for next year's competition! Follow us for updates and be among the first to register for JBCN Stars 2026.
+                  Stay tuned for the next competition! Follow us for updates.
                 </p>
               </div>
 
