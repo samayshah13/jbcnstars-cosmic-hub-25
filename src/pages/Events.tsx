@@ -1,11 +1,8 @@
 import React from "react";
 import Layout from "@/components/Layout";
-import { Calendar, Clock, MapPin, Users, Trophy, Star, Award, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Clock, MapPin, Users } from "lucide-react";
 import RickRollEasterEgg from "@/components/RickRollEasterEgg";
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
-import { officialSyllabusUrl } from "@/lib/competition";
 
 const Events = () => {
   return (
@@ -33,7 +30,7 @@ const Events = () => {
             </div>
             <div className="text-center mt-8">
               <p className="text-foreground-muted mb-4">For the 2026 syllabus and competition round details, view the official document.</p>
-              <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official Syllabus & Rounds</Button>
+
             </div>
           </div>
 
@@ -44,7 +41,7 @@ const Events = () => {
                 Ready to Join the Mathematical Elite?
               </h3>
               <p className="text-foreground-muted mb-8 text-xl leading-relaxed">
-                Registration for JBCNSTARS 2026 is now open! Secure your place in this prestigious competition 
+                Register your team of three by October 5, 2026 for JBCNSTARS 2026 
                 and embark on an extraordinary mathematical journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">

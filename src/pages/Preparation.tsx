@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { officialSyllabusUrl } from "@/lib/competition"
 
 const Preparation = () => {
   const [selectedLevel, setSelectedLevel] = useState("junior")
@@ -169,7 +168,7 @@ const Preparation = () => {
 
            <div className="text-center mb-12">
              <p className="text-foreground-muted mb-4">For exact 2026 topics and round details at all five levels, consult the official document.</p>
-             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official 2026 Syllabus & Rounds</Button>
+
            </div>
 
            {/* Key Topics to Master */}

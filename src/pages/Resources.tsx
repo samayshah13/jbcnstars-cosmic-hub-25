@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
-import { officialSyllabusUrl } from "@/lib/competition"
 
 const Resources = () => {
   const pastPapers = {
@@ -186,7 +185,7 @@ const Resources = () => {
           <div className="mb-16 text-center">
             <h2 className="text-2xl font-bold mb-3">2026 Syllabus & Rounds</h2>
             <p className="text-foreground-muted mb-4">View the official syllabus and round details for all five levels, including Sub Junior Levels 1 and 2.</p>
-            <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official Syllabus & Rounds <ExternalLink className="w-4 h-4 ml-2" /></Button>
+
           </div>
 
           {/* Past Papers Section */}

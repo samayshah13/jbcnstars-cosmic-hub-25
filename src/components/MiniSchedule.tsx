@@ -17,7 +17,7 @@ const MiniSchedule = () => {
           className="self-start sm:self-auto text-deep-purple border-deep-purple hover:bg-deep-purple hover:text-white text-sm"
           onClick={() => window.location.href = '/events'}
         >
-          View Full Schedule
+          Event Details
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </div>

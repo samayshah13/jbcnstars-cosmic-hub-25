@@ -3,8 +3,7 @@ import Layout from "@/components/Layout"
 import { CheckCircle, AlertCircle, Clock, Users, BookOpen, Trophy } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { officialSyllabusUrl, registrationUrl } from "@/lib/competition"
-import { Button } from "@/components/ui/button"
+import { registrationUrl } from "@/lib/competition"
 
 const Rules = () => {
   const generalRules = [
@@ -181,7 +180,7 @@ const Rules = () => {
 
            <div className="text-center mb-16">
              <p className="text-foreground-muted mb-4">The official 2026 document has the complete syllabus and round details for every level.</p>
-             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View 2026 Syllabus & Rounds</Button>
+
            </div>
 
            {/* Detailed Guidelines */}

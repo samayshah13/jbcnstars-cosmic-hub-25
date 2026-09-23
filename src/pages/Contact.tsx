@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
-import { officialSyllabusUrl } from "@/lib/competition";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -97,7 +96,7 @@ const Contact = () => {
     },
     {
       question: "What is the competition format?",
-      answer: `Teams take part in individual, team, and quiz rounds. For the 2026 round details, see the official syllabus: ${officialSyllabusUrl}`
+      answer: "Teams compete in teams of three. The updated 2026 round format will be posted here soon."
     },
     {
       question: "What prizes and recognition do winners receive?",
@@ -105,7 +104,7 @@ const Contact = () => {
     },
     {
       question: "What mathematical topics are covered?",
-      answer: `Sub Junior Level 1 (Grades 1–2) and Sub Junior Level 2 (Grades 3–5) have been added for 2026. For the exact syllabus at each level, see the official document: ${officialSyllabusUrl}\n\nJunior Level (Grades 6-7): Logical thinking, number patterns, figure patterns, number properties, speed/distance/time, ratios, percentages, and basic geometry.
+      answer: `Sub Junior Level 1 (Grades 1–2) and Sub Junior Level 2 (Grades 3–5) have been added for 2026. The updated syllabus for both new levels will be posted here soon.\n\nJunior Level (Grades 6-7): Logical thinking, number patterns, figure patterns, number properties, speed/distance/time, ratios, percentages, and basic geometry.
 
 Intermediate Level (Grades 8-10): Logic problems, arithmetic, number theory, patterns, algebra, geometry, trigonometry, statistics, and probability.
 
