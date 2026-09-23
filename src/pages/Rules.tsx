@@ -4,7 +4,7 @@ import { CheckCircle, AlertCircle, Clock, Users, BookOpen, Trophy } from "lucide
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { registrationUrl } from "@/lib/competition"
-import { syllabus, rounds } from "@/lib/syllabus"
+import { syllabus } from "@/lib/syllabus"
 
 const Rules = () => {
   const generalRules = [
@@ -43,38 +43,6 @@ const Rules = () => {
     }
   ]
 
-  const gradeLevels = [
-    {
-      level: "Sub Junior Level 1",
-      grades: "Grades 1 & 2",
-      topics: "Number sense, counting and place value, basic addition and subtraction, number and shape patterns, measurement, money, time, and logical thinking puzzles.",
-      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
-    },
-    {
-      level: "Sub Junior Level 2",
-      grades: "Grades 3, 4 & 5",
-      topics: "Logical thinking, number and figure patterns, whole-number operations, fractions and decimals, number properties, time problems, basic geometry, measurement, and data handling.",
-      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
-    },
-    {
-      level: "Junior Level",
-      grades: "Grades 6 & 7",
-      topics: "Logical Thinking, Number pattern, Figure Pattern, Guess on 3-digit, 4 digit numbers by given number properties, Speed, distance & time Problem, ratio and percentages, basic geometry",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    },
-    {
-      level: "Intermediate Level", 
-      grades: "Grades 8, 9 & 10",
-      topics: "Logical Thinking problems, Arithmetic, Number theory, Pattern, Algebra, Geometry, Trigonometry, Statistics and Probability",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    },
-    {
-      level: "Senior Level",
-      grades: "Grades 11 & 12", 
-      topics: "Arithmetic, Number theory, Pattern, Algebra, shapes and measures, Geometry, Trigonometry, Statistics and Probability",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    }
-  ]
 
   return (
     <Layout>
@@ -152,7 +120,7 @@ const Rules = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {gradeLevels.map((grade, index) => (
+              {syllabus.map((grade, index) => (
                 <Card 
                   key={index}
                   className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border"
@@ -170,7 +138,7 @@ const Rules = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-sm mb-2">Difficulty:</h4>
-                        <p className="text-foreground-muted text-sm">{grade.difficulty}</p>
+                        <p className="text-foreground-muted text-sm">{"Grade-appropriate logical reasoning and problem-solving"}</p>
                       </div>
                     </div>
                   </CardContent>
