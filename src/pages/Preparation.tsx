@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { officialSyllabusUrl } from "@/lib/competition"
+import { syllabus, rounds } from "@/lib/syllabus"
 
 const Preparation = () => {
   const [selectedLevel, setSelectedLevel] = useState("junior")
@@ -38,8 +38,8 @@ const Preparation = () => {
   ]
 
   const preparationTips = {
-    subJunior1: [{ category: "Grades 1–2", tips: ["Review the official Sub Junior Level 1 syllabus", "Practice age-appropriate number sense and reasoning"] }],
-    subJunior2: [{ category: "Grades 3–5", tips: ["Review the official Sub Junior Level 2 syllabus", "Practice grade-appropriate problem solving and reasoning"] }],
+    subJunior1: [{ category: "Grades 1–2", tips: ["Practice number sense, counting, place value, addition and subtraction", "Practice age-appropriate number sense and reasoning"] }],
+    subJunior2: [{ category: "Grades 3–5", tips: ["Practice patterns, whole-number operations, fractions and decimals", "Practice grade-appropriate problem solving and reasoning"] }],
     junior: [
       {
         category: "Foundation Building",
@@ -167,132 +167,18 @@ const Preparation = () => {
             </p>
           </div>
 
-           <div className="text-center mb-12">
-             <p className="text-foreground-muted mb-4">For exact 2026 topics and round details at all five levels, consult the official document.</p>
-             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official 2026 Syllabus & Rounds</Button>
-           </div>
-
-           {/* Key Topics to Master */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Key Topics to <span className="text-primary">Master</span>
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-               <Card className="bg-card border-card-border">
-                 <CardHeader><CardTitle>Sub Junior Level 1 · Grades 1–2</CardTitle></CardHeader>
-                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
-               </Card>
-               <Card className="bg-card border-card-border">
-                 <CardHeader><CardTitle>Sub Junior Level 2 · Grades 3–5</CardTitle></CardHeader>
-                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
-               </Card>
-               <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <Target className="w-5 h-5" />
-                    </div>
-                    Junior Level
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-muted">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Number Theory & Arithmetic</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Basic Geometry & Shapes</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Pattern Recognition</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Logical Reasoning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Word Problems</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <Zap className="w-5 h-5" />
-                    </div>
-                    Intermediate Level
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-muted">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Algebra & Equations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Coordinate Geometry</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Trigonometry Basics</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Probability & Statistics</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Advanced Problem Solving</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <Brain className="w-5 h-5" />
-                    </div>
-                    Senior Level
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-foreground-muted">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Calculus Fundamentals</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Complex Numbers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Mathematical Analysis</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Olympiad-Level Problems</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Abstract Reasoning</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+           <section className="mb-20">
+             <h2 className="text-4xl font-bold text-center mb-12">2026 <span className="text-primary">Syllabus</span></h2>
+             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+               {syllabus.map((item) => <Card key={item.level} className="bg-card border-card-border"><CardHeader><CardTitle>{item.level} · {item.grades}</CardTitle></CardHeader><CardContent className="text-foreground-muted text-sm">{item.topics}</CardContent></Card>)}
+             </div>
+           </section>
+           <section className="mb-20">
+             <h2 className="text-4xl font-bold text-center mb-12">Competition <span className="text-primary">Rounds</span></h2>
+             <div className="grid md:grid-cols-3 gap-6">
+               {rounds.map((round) => <Card key={round.title} className="bg-card border-card-border"><CardHeader><CardTitle>{round.title}</CardTitle></CardHeader><CardContent className="text-foreground-muted text-sm space-y-3"><p>{round.subJunior}</p><p>{round.otherLevels}</p></CardContent></Card>)}
+             </div>
+           </section>
 
           {/* Preparation Tips by Level */}
           <div className="mb-20">
@@ -383,14 +269,6 @@ const Preparation = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-               <Card className="bg-card border-card-border">
-                 <CardHeader><CardTitle>Sub Junior Level 1 · Grades 1–2</CardTitle></CardHeader>
-                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
-               </Card>
-               <Card className="bg-card border-card-border">
-                 <CardHeader><CardTitle>Sub Junior Level 2 · Grades 3–5</CardTitle></CardHeader>
-                 <CardContent className="text-foreground-muted text-sm">The full syllabus for this new primary category is in the official 2026 document.</CardContent>
-               </Card>
                <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border">
                 <CardContent className="p-6 text-center">
                   <FileText className="w-12 h-12 text-primary mx-auto mb-4" />

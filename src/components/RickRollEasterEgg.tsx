@@ -12,8 +12,8 @@ const RickRollEasterEgg: React.FC<RickRollEasterEggProps> = ({ liveStreamUrl, cl
   const [isRickRolled, setIsRickRolled] = useState(false);
   const [isHolding, setIsHolding] = useState(false);
   const [holdProgress, setHoldProgress] = useState(0);
-  const holdTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const holdTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const rickRollUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1";
 
@@ -34,7 +34,7 @@ const RickRollEasterEgg: React.FC<RickRollEasterEggProps> = ({ liveStreamUrl, cl
       setIsRickRolled(true);
       setIsHolding(false);
       setHoldProgress(0);
-      clearInterval(progressIntervalRef.current!);
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     }, 10000);
   };
 

@@ -1,11 +1,9 @@
 import React from "react";
 import Layout from "@/components/Layout";
-import { Calendar, Clock, MapPin, Users, Trophy, Star, Award, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Clock, MapPin, Users } from "lucide-react";
+import { rounds } from "@/lib/syllabus";
 import RickRollEasterEgg from "@/components/RickRollEasterEgg";
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg";
-import { officialSyllabusUrl } from "@/lib/competition";
 
 const Events = () => {
   return (
@@ -32,9 +30,19 @@ const Events = () => {
               <div className="glass p-5 rounded-lg border border-primary/20"><Users className="w-5 h-5 text-primary mb-2" /><h3 className="font-semibold">Levels</h3><p className="text-foreground-muted">Sub Junior 1 (Grades 1–2), Sub Junior 2 (Grades 3–5), Junior (6–7), Intermediate (8–10), Senior (11–12)</p></div>
             </div>
             <div className="text-center mt-8">
-              <p className="text-foreground-muted mb-4">For the 2026 syllabus and competition round details, view the official document.</p>
-              <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official Syllabus & Rounds</Button>
+              <p className="text-foreground-muted mb-4">The top 4 teams in each level qualify for the Math Quiz based on combined individual and team scores.</p>
+
             </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-16">
+            {rounds.map((round) => (
+              <div key={round.title} className="glass p-5 rounded-lg border border-primary/20">
+                <h3 className="font-semibold mb-3">{round.title}</h3>
+                <p className="text-foreground-muted text-sm mb-2">{round.subJunior}</p>
+                <p className="text-foreground-muted text-sm">{round.otherLevels}</p>
+              </div>
+            ))}
           </div>
 
           {/* Registration CTA */}
@@ -44,7 +52,7 @@ const Events = () => {
                 Ready to Join the Mathematical Elite?
               </h3>
               <p className="text-foreground-muted mb-8 text-xl leading-relaxed">
-                Registration for JBCNSTARS 2026 is now open! Secure your place in this prestigious competition 
+                Register your team of three by October 5, 2026 for JBCNSTARS 2026 
                 and embark on an extraordinary mathematical journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">

@@ -55,9 +55,9 @@ const Index = () => {
       <section className="py-12 sm:py-20 bg-background-secondary grid-bg">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Quiz Round Schedule</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Competition Day 2026</h2>
             <p className="text-foreground-muted text-base sm:text-lg">
-              The top 4 teams with the highest combined scores from the first two rounds in each grade level will compete in the quiz round
+              Monday, October 19 · 7:30 AM–4:00 PM · JBCN Parel
             </p>
           </div>
           <MiniSchedule />

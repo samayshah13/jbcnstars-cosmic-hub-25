@@ -3,8 +3,8 @@ import Layout from "@/components/Layout"
 import { CheckCircle, AlertCircle, Clock, Users, BookOpen, Trophy } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { officialSyllabusUrl, registrationUrl } from "@/lib/competition"
-import { Button } from "@/components/ui/button"
+import { registrationUrl } from "@/lib/competition"
+import { syllabus } from "@/lib/syllabus"
 
 const Rules = () => {
   const generalRules = [
@@ -23,58 +23,26 @@ const Rules = () => {
     {
       title: "Individual Round",
       description: "Each participant solves grade-appropriate questions",
-      duration: "See official 2026 round details",
-      questions: "See the official 2026 syllabus for question and scoring details",
+      duration: "Sub Junior 1: 30 min · other levels: 60 min",
+      questions: "Sub Junior 1: +4 correct, no penalty. Other levels: 30 multiple-choice questions, +4 correct, −1 incorrect.",
       icon: <BookOpen className="w-6 h-6" />
     },
     {
       title: "Team Round", 
       description: "Teams of three collaborate to solve problems",
-      duration: "See official 2026 round details",
-      questions: "See the official 2026 syllabus for question and scoring details",
+      duration: "Sub Junior 1: 30 min · other levels: 60 min",
+      questions: "Sub Junior 1: collaborative challenges, +10 correct. Other levels: 10 problems, +10 correct, no penalty.",
       icon: <Users className="w-6 h-6" />
     },
     {
       title: "Math Quiz",
-      description: "Qualifying teams compete in the quiz round",
-      duration: "See official 2026 round details",
+      description: "The top 4 teams in each level qualify based on combined individual and team scores",
+      duration: "Five levels",
       questions: "Math Star trophy for winners",
       icon: <Trophy className="w-6 h-6" />
     }
   ]
 
-  const gradeLevels = [
-    {
-      level: "Sub Junior Level 1",
-      grades: "Grades 1 & 2",
-      topics: "See the official 2026 syllabus for this level.",
-      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
-    },
-    {
-      level: "Sub Junior Level 2",
-      grades: "Grades 3, 4 & 5",
-      topics: "See the official 2026 syllabus for this level.",
-      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
-    },
-    {
-      level: "Junior Level",
-      grades: "Grades 6 & 7",
-      topics: "Logical Thinking, Number pattern, Figure Pattern, Guess on 3-digit, 4 digit numbers by given number properties, Speed, distance & time Problem, ratio and percentages, basic geometry",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    },
-    {
-      level: "Intermediate Level", 
-      grades: "Grades 8, 9 & 10",
-      topics: "Logical Thinking problems, Arithmetic, Number theory, Pattern, Algebra, Geometry, Trigonometry, Statistics and Probability",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    },
-    {
-      level: "Senior Level",
-      grades: "Grades 11 & 12", 
-      topics: "Arithmetic, Number theory, Pattern, Algebra, shapes and measures, Geometry, Trigonometry, Statistics and Probability",
-      difficulty: "Questions designed to motivate learners to think logically and challenge their mind with intriguing math problems"
-    }
-  ]
 
   return (
     <Layout>
@@ -152,7 +120,7 @@ const Rules = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {gradeLevels.map((grade, index) => (
+              {syllabus.map((grade, index) => (
                 <Card 
                   key={index}
                   className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-card-border"
@@ -168,10 +136,6 @@ const Rules = () => {
                         <h4 className="font-semibold text-sm mb-2">Topics Covered:</h4>
                         <p className="text-foreground-muted text-sm">{grade.topics}</p>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">Difficulty:</h4>
-                        <p className="text-foreground-muted text-sm">{grade.difficulty}</p>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -180,8 +144,8 @@ const Rules = () => {
           </div>
 
            <div className="text-center mb-16">
-             <p className="text-foreground-muted mb-4">The official 2026 document has the complete syllabus and round details for every level.</p>
-             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View 2026 Syllabus & Rounds</Button>
+             <p className="text-foreground-muted mb-4">The individual and team rounds lead to a Math Quiz for the top 4 teams in each level.</p>
+
            </div>
 
            {/* Detailed Guidelines */}
@@ -259,7 +223,7 @@ const Rules = () => {
                         Scoring is based on accuracy, with different weightage for different rounds.
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-foreground-muted">
-                        <li>See the official 2026 syllabus and round details for scoring and quiz qualification.</li>
+                        <li>Sub Junior Level 1: individual +4 correct with no penalty; team +10 correct. Other levels: individual +4 correct, −1 incorrect; team +10 correct with no penalty. The top 4 teams per level qualify for the quiz based on combined scores.</li>
                         <li>Awards: Top three individual scorers at each level receive plaques; top three teams at each level receive plaques and certificates for each member; quiz winners receive the Math Star trophy. Every participant receives a participation certificate.</li>
                       </ul>
                     </AccordionContent>

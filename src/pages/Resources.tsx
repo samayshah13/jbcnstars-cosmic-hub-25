@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
-import { officialSyllabusUrl } from "@/lib/competition"
+import { syllabus, rounds } from "@/lib/syllabus"
 
 const Resources = () => {
   const pastPapers = {
@@ -183,11 +183,15 @@ const Resources = () => {
             </Card>
           </div>
 
-          <div className="mb-16 text-center">
-            <h2 className="text-2xl font-bold mb-3">2026 Syllabus & Rounds</h2>
-            <p className="text-foreground-muted mb-4">View the official syllabus and round details for all five levels, including Sub Junior Levels 1 and 2.</p>
-            <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View Official Syllabus & Rounds <ExternalLink className="w-4 h-4 ml-2" /></Button>
-          </div>
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-center mb-6">2026 Syllabus & Rounds</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {syllabus.map((item) => <Card key={item.level} className="bg-card border-card-border"><CardHeader><CardTitle>{item.level} · {item.grades}</CardTitle></CardHeader><CardContent className="text-foreground-muted text-sm">{item.topics}</CardContent></Card>)}
+            </div>
+            <div className="grid md:grid-cols-3 gap-4">
+              {rounds.map((round) => <Card key={round.title} className="bg-card border-card-border"><CardHeader><CardTitle>{round.title}</CardTitle></CardHeader><CardContent className="text-foreground-muted text-sm space-y-2"><p>{round.subJunior}</p><p>{round.otherLevels}</p></CardContent></Card>)}
+            </div>
+          </section>
 
           {/* Past Papers Section */}
           <div className="mb-20">
