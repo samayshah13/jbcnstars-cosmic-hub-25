@@ -7,9 +7,27 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
 import { syllabus, rounds } from "@/lib/syllabus"
+import individualJunior2025 from "@/assets/papers/Individual_Round_Junior_level_JBCN_STARS_2025.pdf.asset.json"
+import individualIntermediate2025 from "@/assets/papers/Individual_Round_Intermediate_level_JBCN_STARS_2025.pdf.asset.json"
+import individualSenior2025 from "@/assets/papers/Individual_Round_Senior_level_JBCN_STARS_2025.pdf.asset.json"
+import teamJunior2025 from "@/assets/papers/Team_Round_Junior_level_JBCN_STARS_2025.pdf.asset.json"
+import teamIntermediate2025 from "@/assets/papers/Team_Round_Intermediate_level_JBCN_STARS_2025.pdf.asset.json"
+import teamSenior2025 from "@/assets/papers/Team_Round_Senior_level_JBCN_STARS_2025.pdf.asset.json"
 
 const Resources = () => {
   const pastPapers = {
+    "2025": {
+      individual: [
+        { title: "Individual Round - Junior Level", grade: "Grades 6-7", level: "Junior", difficulty: "Foundation", downloadUrl: individualJunior2025.url },
+        { title: "Individual Round - Intermediate Level", grade: "Grades 8-10", level: "Intermediate", difficulty: "Intermediate", downloadUrl: individualIntermediate2025.url },
+        { title: "Individual Round - Senior Level", grade: "Grades 11-12", level: "Senior", difficulty: "Advanced", downloadUrl: individualSenior2025.url }
+      ],
+      team: [
+        { title: "Team Round - Junior Level", grade: "Grades 6-7", level: "Junior", difficulty: "Collaborative", downloadUrl: teamJunior2025.url },
+        { title: "Team Round - Intermediate Level", grade: "Grades 8-10", level: "Intermediate", difficulty: "Collaborative", downloadUrl: teamIntermediate2025.url },
+        { title: "Team Round - Senior Level", grade: "Grades 11-12", level: "Senior", difficulty: "Advanced", downloadUrl: teamSenior2025.url }
+      ]
+    },
     "2024": {
       individual: [
         {
@@ -199,8 +217,9 @@ const Resources = () => {
               Previous <span className="text-primary">Question Papers</span>
             </h2>
             
-            <Tabs defaultValue="2024" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-8">
+            <Tabs defaultValue="2025" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-8">
+                <TabsTrigger value="2025">2025 Papers</TabsTrigger>
                 <TabsTrigger value="2024">2024 Papers</TabsTrigger>
                 <TabsTrigger value="2023">2023 Papers</TabsTrigger>
               </TabsList>
