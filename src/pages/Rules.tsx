@@ -3,16 +3,18 @@ import Layout from "@/components/Layout"
 import { CheckCircle, AlertCircle, Clock, Users, BookOpen, Trophy } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { officialSyllabusUrl, registrationUrl } from "@/lib/competition"
+import { Button } from "@/components/ui/button"
 
 const Rules = () => {
   const generalRules = [
-    "Open to students from Grades 6 to 12 across all JBCN campuses",
+    "Open to students from Grades 1 to 12 from different schools",
     "This is a team competition - participants must compete in teams of 3 members",
     "No calculators allowed. All electronic devices are prohibited during competition",
-    "Competition takes place on October 11, 2025, Saturday, from 7:30 AM to 3:00 PM",
+    "Competition takes place on Monday, October 19, 2026, from 7:30 AM to 4:00 PM",
     "Venue: JBCN Parel, Mumbai",
-    "Registration fee: INR 1200 per team (inclusive of breakfast and lunch)",
-    "Registration deadline: October 5, 2025",
+    "Registration fee: INR 1500 per team (inclusive of breakfast and lunch)",
+    "Registration deadline: October 5, 2026",
     "Participants must bring valid student ID and registration confirmation",
     "Late arrivals may be disqualified at the organizers' discretion"
   ]
@@ -20,28 +22,40 @@ const Rules = () => {
   const competitionFormat = [
     {
       title: "Individual Round",
-      description: "Each participant tackles 30 multiple choice questions",
-      duration: "60 minutes",
-      questions: "30 MCQs (4 marks each correct, -1 for incorrect)",
+      description: "Each participant solves grade-appropriate questions",
+      duration: "See official 2026 round details",
+      questions: "See the official 2026 syllabus for question and scoring details",
       icon: <BookOpen className="w-6 h-6" />
     },
     {
       title: "Team Round", 
-      description: "Teams collaborate to solve complex problems",
-      duration: "60 minutes",
-      questions: "10 problems (10 marks each, no negative marking)",
+      description: "Teams of three collaborate to solve problems",
+      duration: "See official 2026 round details",
+      questions: "See the official 2026 syllabus for question and scoring details",
       icon: <Users className="w-6 h-6" />
     },
     {
       title: "Math Quiz",
-      description: "Top 4 teams from each level compete in final quiz",
-      duration: "Rapid-fire format",
+      description: "Qualifying teams compete in the quiz round",
+      duration: "See official 2026 round details",
       questions: "Math Star trophy for winners",
       icon: <Trophy className="w-6 h-6" />
     }
   ]
 
   const gradeLevels = [
+    {
+      level: "Sub Junior Level 1",
+      grades: "Grades 1 & 2",
+      topics: "See the official 2026 syllabus for this level.",
+      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
+    },
+    {
+      level: "Sub Junior Level 2",
+      grades: "Grades 3, 4 & 5",
+      topics: "See the official 2026 syllabus for this level.",
+      difficulty: "Grade-appropriate mathematical reasoning and problem-solving"
+    },
     {
       level: "Junior Level",
       grades: "Grades 6 & 7",
@@ -165,7 +179,12 @@ const Rules = () => {
             </div>
           </div>
 
-          {/* Detailed Guidelines */}
+           <div className="text-center mb-16">
+             <p className="text-foreground-muted mb-4">The official 2026 document has the complete syllabus and round details for every level.</p>
+             <Button variant="outline" onClick={() => window.open(officialSyllabusUrl, "_blank", "noopener,noreferrer")}>View 2026 Syllabus & Rounds</Button>
+           </div>
+
+           {/* Detailed Guidelines */}
           <div className="mb-16">
             <h2 className="text-4xl font-bold text-center mb-12">
               Detailed <span className="text-primary">Guidelines</span>
@@ -180,15 +199,15 @@ const Rules = () => {
                     </AccordionTrigger>
                     <AccordionContent className="space-y-4">
                       <p className="text-foreground-muted">
-                        Registration is open to all JBCN students from Grades 6-12. Students must register 
-                        in teams of exactly 3 members. Registration fee is INR 1200 per team (inclusive of breakfast and lunch). 
-                        Registration deadline is September 25, 2025.
+                        Registration is open to students from Grades 1–12 from different schools. Students must register 
+                        in teams of exactly 3 members. Registration fee is INR 1500 per team (inclusive of breakfast and lunch). 
+                        Registration deadline is October 5, 2026.
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-foreground-muted">
                         <li>Form teams of exactly 3 members from same grade level</li>
-                        <li>Complete online registration form</li>
-                        <li>Pay registration fee of INR 1200 per team</li>
-                        <li>Register by October 5, 2025</li>
+                        <li><a href={registrationUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">Complete the 2026 registration form</a></li>
+                        <li>Pay registration fee of INR 1500 per team</li>
+                        <li>Register by October 5, 2026</li>
                         <li>Submit signed consent form from parents</li>
                         <li>Receive confirmation email with event details</li>
                       </ul>
@@ -219,7 +238,7 @@ const Rules = () => {
                     </AccordionTrigger>
                     <AccordionContent className="space-y-4">
                       <p className="text-foreground-muted">
-                        Arrive at least 30 minutes before your scheduled time. Bring necessary materials 
+                        Registration begins at 7:30 AM. Bring necessary materials 
                         and identification.
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-foreground-muted">
@@ -240,10 +259,8 @@ const Rules = () => {
                         Scoring is based on accuracy, with different weightage for different rounds.
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-foreground-muted">
-                        <li>Individual Round: Each correct answer = 4 marks, wrong answer = -1 mark</li>
-                        <li>Team Round: Each correct answer = 10 marks, no negative marking</li>
-                        <li>Math Quiz: Top 4 teams from each level qualify for final quiz</li>
-                        <li>Awards: Individual plaques (top 3), Team plaques + certificates, Math Star trophy for quiz winners</li>
+                        <li>See the official 2026 syllabus and round details for scoring and quiz qualification.</li>
+                        <li>Awards: Top three individual scorers at each level receive plaques; top three teams at each level receive plaques and certificates for each member; quiz winners receive the Math Star trophy. Every participant receives a participation certificate.</li>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>
