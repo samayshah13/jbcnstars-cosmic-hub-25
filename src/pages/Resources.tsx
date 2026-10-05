@@ -8,6 +8,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import RegistrationClosedEasterEgg from "@/components/RegistrationClosedEasterEgg"
 import { syllabus, rounds } from "@/lib/syllabus"
 import individualJunior2025 from "@/assets/papers/Individual_Round_Junior_level_JBCN_STARS_2025.pdf.asset.json"
+import sampleSubJunior2Set1 from "@/assets/samples/Sample_Questions_1-_Sub_Junior_Level_2.pdf.asset.json"
+import sampleSubJunior2Set2 from "@/assets/samples/Sample_Questions_2_-_Sub_Junior_Level_2.pdf.asset.json"
+import sampleSubJunior1Questions from "@/assets/samples/Sub_Junior_Level_1_-_Sample_Questions.png.asset.json"
+import sampleSubJunior1AnswerKey from "@/assets/samples/Sub_Junior_Level_1_-_Sample_Questions_-_Answer_Key.png.asset.json"
 import individualIntermediate2025 from "@/assets/papers/Individual_Round_Intermediate_level_JBCN_STARS_2025.pdf.asset.json"
 import individualSenior2025 from "@/assets/papers/Individual_Round_Senior_level_JBCN_STARS_2025.pdf.asset.json"
 import teamJunior2025 from "@/assets/papers/Team_Round_Junior_level_JBCN_STARS_2025.pdf.asset.json"
@@ -210,6 +214,90 @@ const Resources = () => {
               {rounds.map((round) => <Card key={round.title} className="bg-card border-card-border"><CardHeader><CardTitle>{round.title}</CardTitle></CardHeader><CardContent className="text-foreground-muted text-sm space-y-2"><p>{round.subJunior}</p><p>{round.otherLevels}</p></CardContent></Card>)}
             </div>
           </section>
+
+          {/* Sample Questions Section */}
+          <div className="mb-20">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Sample <span className="text-primary">Questions</span>
+            </h2>
+            <p className="text-foreground-muted text-center max-w-2xl mx-auto -mt-6 mb-10">
+              Try these official sample questions for the Sub Junior levels — with answer keys included.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="card-glow group">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg mb-2">Sub Junior Level 1</CardTitle>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <Badge variant="outline" className="text-xs">Grades 1 & 2</Badge>
+                        <Badge className="text-xs bg-green-100 text-green-800 border-green-200">With Answer Key</Badge>
+                      </div>
+                    </div>
+                    <FileText className="w-8 h-8 text-primary flex-shrink-0" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground-muted text-sm mb-6">
+                    20 beginner-friendly questions covering number sense, patterns, shapes, time and money.
+                  </p>
+                  <div className="space-y-2">
+                    <Button
+                      className="w-full group-hover:bg-primary/90 transition-colors"
+                      onClick={() => window.open(sampleSubJunior1Questions.url, '_blank')}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Sample Questions
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => window.open(sampleSubJunior1AnswerKey.url, '_blank')}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Answer Key
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="card-glow group">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg mb-2">Sub Junior Level 2</CardTitle>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <Badge variant="outline" className="text-xs">Grades 3, 4 & 5</Badge>
+                        <Badge className="text-xs bg-blue-100 text-blue-800 border-blue-200">Two Sets</Badge>
+                      </div>
+                    </div>
+                    <FileText className="w-8 h-8 text-primary flex-shrink-0" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground-muted text-sm mb-6">
+                    Two sets of practice questions with patterns, fractions, decimals, geometry and logic puzzles.
+                  </p>
+                  <div className="space-y-2">
+                    <Button
+                      className="w-full group-hover:bg-primary/90 transition-colors"
+                      onClick={() => window.open(sampleSubJunior2Set1.url, '_blank')}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Sample Questions – Set 1
+                    </Button>
+                    <Button
+                      className="w-full group-hover:bg-primary/90 transition-colors"
+                      onClick={() => window.open(sampleSubJunior2Set2.url, '_blank')}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Sample Questions – Set 2
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
           {/* Past Papers Section */}
           <div className="mb-20">
